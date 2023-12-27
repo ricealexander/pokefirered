@@ -27,58 +27,58 @@ PokedexRating_Text_LessThan30::
 	.string "Try to catch other species of\n"
 	.string "POKéMON!$"
 
-PokedexRating_Text_LessThan40::
+PokedexRating_Text_LessThan45::
 	.string "Good, it's apparent that you're\n"
 	.string "trying hard!\p"
 	.string "I've given one of my AIDES an\n"
 	.string "ITEMFINDER. Be sure to collect it!$"
 
-PokedexRating_Text_LessThan50::
+PokedexRating_Text_LessThan55::
 	.string "Your POKéDEX is coming along quite\n"
 	.string "well!\p"
 	.string "I've given one of my AIDES an\n"
 	.string "AMULET COIN. Be sure to get it!$"
 
-PokedexRating_Text_LessThan60::
+PokedexRating_Text_LessThan65::
 	.string "Ah, you've finally topped 50\n"
 	.string "species!\p"
 	.string "I've given one of my AIDES an EXP.\n"
 	.string "SHARE. Be sure to go get it!$"
 
-PokedexRating_Text_LessThan70::
+PokedexRating_Text_LessThan75::
 	.string "Hoho! This is turning into quite the\n"
 	.string "respectable POKéDEX!$"
 
-PokedexRating_Text_LessThan80::
+PokedexRating_Text_LessThan90::
 	.string "Very good!\p"
 	.string "I think you'll collect even more\n"
 	.string "POKéMON by going fishing!$"
 
-PokedexRating_Text_LessThan90::
+PokedexRating_Text_LessThan100::
 	.string "Wonderful! Let me guess… You\n"
 	.string "like to collect things, don't you?$"
 
-PokedexRating_Text_LessThan100::
+PokedexRating_Text_LessThan110::
 	.string "I'm impressed!\n"
 	.string "It must have been difficult to do!$"
 
-PokedexRating_Text_LessThan110::
+PokedexRating_Text_LessThan120::
 	.string "You've finally hit 100 species!\n"
 	.string "I can't believe how good you are!$"
 
-PokedexRating_Text_LessThan120::
+PokedexRating_Text_LessThan135::
 	.string "You even have the evolved forms\n"
 	.string "of POKéMON! Super!$"
 
-PokedexRating_Text_LessThan130::
+PokedexRating_Text_LessThan145::
 	.string "Excellent! Trade with friends to\n"
 	.string "get some more!$"
 
-PokedexRating_Text_LessThan140::
+PokedexRating_Text_LessThan155::
 	.string "Outstanding!\n"
 	.string "You've become a real pro at this!$"
 
-PokedexRating_Text_LessThan150::
+PokedexRating_Text_LessThan169::
 	.string "I have nothing left to say!\n"
 	.string "You're the POKéMON PROFESSOR now!$"
 
