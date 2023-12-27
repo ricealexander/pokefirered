@@ -1,3 +1,18 @@
+/* Pokedex POKeMON HABITATS
+   Grassland POKeMON
+   Forest POKeMON
+   Water's-edge POKeMON
+   Sea POKeMON
+   Cave POKeMON
+   Mountain POKeMON
+   Rough-terrain POKeMON
+   Urban POKeMON
+   Rare POKeMON
+*/
+
+
+// 1. Grassland POKeMON
+
 static const u16 sDexCategory_GrasslandPkmn_Page1[] = {
     SPECIES_RATTATA,
     SPECIES_RATICATE,
@@ -159,6 +174,10 @@ static const u16 sDexCategory_GrasslandPkmn_Page27[] = {
     SPECIES_SUICUNE,
 };
 
+
+
+// 2. Forest POKeMON
+
 static const u16 sDexCategory_ForestPkmn_Page1[] = {
     SPECIES_CATERPIE,
     SPECIES_METAPOD,
@@ -308,6 +327,10 @@ static const u16 sDexCategory_ForestPkmn_Page26[] = {
     SPECIES_CELEBI,
 };
 
+
+
+// 3. Water's-edge POKeMON
+
 static const u16 sDexCategory_WatersEdgePkmn_Page1[] = {
     SPECIES_GOLDEEN,
     SPECIES_SEAKING,
@@ -403,6 +426,10 @@ static const u16 sDexCategory_WatersEdgePkmn_Page16[] = {
     SPECIES_LATIOS,
 };
 
+
+
+// 4. Sea POKeMON
+
 static const u16 sDexCategory_SeaPkmn_Page1[] = {
     SPECIES_TENTACOOL,
     SPECIES_TENTACRUEL,
@@ -491,6 +518,10 @@ static const u16 sDexCategory_SeaPkmn_Page16[] = {
     SPECIES_KYOGRE,
 };
 
+
+
+// 5. Cave POKeMON
+
 static const u16 sDexCategory_CavePkmn_Page1[] = {
     SPECIES_ZUBAT,
     SPECIES_GOLBAT,
@@ -549,6 +580,10 @@ static const u16 sDexCategory_CavePkmn_Page10[] = {
     SPECIES_REGICE,
     SPECIES_REGISTEEL,
 };
+
+
+
+// 6. Mountain POKeMON
 
 static const u16 sDexCategory_MountainPkmn_Page1[] = {
     SPECIES_GEODUDE,
@@ -646,6 +681,10 @@ static const u16 sDexCategory_MountainPkmn_Page17[] = {
     SPECIES_JIRACHI,
 };
 
+
+
+// 7. Rough-terrain POKeMON
+
 static const u16 sDexCategory_RoughTerrainPkmn_Page1[] = {
     SPECIES_SPEAROW,
     SPECIES_FEAROW,
@@ -705,6 +744,10 @@ static const u16 sDexCategory_RoughTerrainPkmn_Page10[] = {
 static const u16 sDexCategory_RoughTerrainPkmn_Page11[] = {
     SPECIES_GROUDON,
 };
+
+
+
+// 8. Urban POKeMON
 
 static const u16 sDexCategory_UrbanPkmn_Page1[] = {
     SPECIES_MEOWTH,
@@ -779,6 +822,10 @@ static const u16 sDexCategory_UrbanPkmn_Page12[] = {
     SPECIES_UMBREON,
 };
 
+
+
+// 9. Rare POKeMON
+
 static const u16 sDexCategory_RarePkmn_Page1[] = {
     SPECIES_UNOWN,
 };
@@ -812,6 +859,9 @@ static const u16 sDexCategory_RarePkmn_Page7[] = {
 static const u16 sDexCategory_RarePkmn_Page8[] = {
     SPECIES_MEW,
 };
+
+
+
 
 #define DEX_CATEGORY(name){sDexCategory_##name, NELEMS(sDexCategory_##name)}
 

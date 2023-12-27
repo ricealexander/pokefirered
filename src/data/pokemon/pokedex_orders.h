@@ -1,3 +1,15 @@
+/* Pokedex SEARCH MODEs
+    A TO Z MODE
+    LIGHTEST MODE
+    SMALLEST MODE
+    TYPE MODE
+*/
+
+
+/* A TO Z MODE
+    1. Sort Alphabetically (A to Z)
+*/
+
 const u16 gPokedexOrder_Alphabetical[] =
 {
     NATIONAL_DEX_OLD_UNOWN_B,
@@ -25,6 +37,7 @@ const u16 gPokedexOrder_Alphabetical[] =
     NATIONAL_DEX_OLD_UNOWN_X,
     NATIONAL_DEX_OLD_UNOWN_Y,
     NATIONAL_DEX_OLD_UNOWN_Z,
+
     // Actual pokemon start here.
     NATIONAL_DEX_ABRA,
     NATIONAL_DEX_ABSOL,
@@ -413,6 +426,15 @@ const u16 gPokedexOrder_Alphabetical[] =
     NATIONAL_DEX_ZIGZAGOON,
     NATIONAL_DEX_ZUBAT
 };
+
+
+
+
+
+/* LIGHTEST MODE
+    1. Sort by Weight (ascending)
+    2. Then by Pokedex Number (ascending) [TODO]
+*/
 
 const u16 gPokedexOrder_Weight[] =
 {
@@ -804,6 +826,15 @@ const u16 gPokedexOrder_Weight[] =
     NATIONAL_DEX_GROUDON
 };
 
+
+
+
+
+/* SMALLEST MODE
+    1. Sort by Height (ascending)
+    2. Then by Pokedex Number (ascending) [TODO]
+*/
+
 const u16 gPokedexOrder_Height[] =
 {
     NATIONAL_DEX_DIGLETT,
@@ -1194,8 +1225,57 @@ const u16 gPokedexOrder_Height[] =
     NATIONAL_DEX_WAILORD
 };
 
+
+
+
+
+/* TYPE MODE - Sort by Type
+    1. Sort by Primary Type   (index #, ascending)
+    2. Then by Secondary Type (alphabetized, A to Z)
+    3. Then by Pokedex Number (ascending) [TODO]
+
+    Types by Index:
+    1.  Normal
+    2.  Fighting
+    3.  Flying (always a secondary-type)
+    4.  Poison
+    5.  Ground
+    6.  Rock
+    7.  Bug
+    8.  Ghost
+    9.  Steel
+    10. Fire
+    11. Water
+    12. Grass
+    13. Electric
+    14. Psychic
+    15. Ice
+    16. Dragon
+    17. Dark
+
+    Types in Alphabetical Order:
+    1.  Bug
+    2.  Dark
+    3.  Dragon
+    4.  Electric
+    5.  Fighting
+    6.  Fire
+    7.  Flying
+    8.  Ghost
+    9.  Grass
+    10. Ground
+    11. Ice
+    12. Normal
+    13. Poison
+    14. Psychic
+    15. Rock
+    16. Steel
+    17. Water
+*/
+
 const u16 gPokedexOrder_Type[] =
 {
+    // NORMAL Type
     SPECIES_RATTATA,
     SPECIES_RATICATE,
     SPECIES_CLEFAIRY,
@@ -1283,6 +1363,8 @@ const u16 gPokedexOrder_Type[] =
     SPECIES_SWELLOW,
     SPECIES_SWABLU,
     SPECIES_GIRAFARIG,
+
+    // FIGHTING Type
     SPECIES_MANKEY,
     SPECIES_PRIMEAPE,
     SPECIES_MACHOP,
@@ -1296,6 +1378,8 @@ const u16 gPokedexOrder_Type[] =
     SPECIES_HARIYAMA,
     SPECIES_MEDITITE,
     SPECIES_MEDICHAM,
+
+    // POISON Type
     SPECIES_EKANS,
     SPECIES_ARBOK,
     SPECIES_NIDORAN_F,
@@ -1314,6 +1398,8 @@ const u16 gPokedexOrder_Type[] =
     SPECIES_CROBAT,
     SPECIES_NIDOQUEEN,
     SPECIES_NIDOKING,
+
+    // GROUND Type
     SPECIES_SANDSHREW,
     SPECIES_SANDSLASH,
     SPECIES_DIGLETT,
@@ -1331,6 +1417,8 @@ const u16 gPokedexOrder_Type[] =
     SPECIES_CLAYDOL,
     SPECIES_VIBRAVA,
     SPECIES_FLYGON,
+
+    // ROCK Type
     SPECIES_SUDOWOODO,
     SPECIES_NOSEPASS,
     SPECIES_REGIROCK,
@@ -1352,6 +1440,8 @@ const u16 gPokedexOrder_Type[] =
     SPECIES_LUNATONE,
     SPECIES_SOLROCK,
     SPECIES_TYRANITAR,
+
+    // BUG Type
     SPECIES_CATERPIE,
     SPECIES_METAPOD,
     SPECIES_PINSIR,
@@ -1386,6 +1476,8 @@ const u16 gPokedexOrder_Type[] =
     SPECIES_SURSKIT,
     SPECIES_PARAS,
     SPECIES_PARASECT,
+
+    // GHOST Type
     SPECIES_MISDREAVUS,
     SPECIES_SHUPPET,
     SPECIES_BANETTE,
@@ -1394,6 +1486,8 @@ const u16 gPokedexOrder_Type[] =
     SPECIES_GASTLY,
     SPECIES_HAUNTER,
     SPECIES_GENGAR,
+
+    // STEEL Type
     SPECIES_MAWILE,
     SPECIES_REGISTEEL,
     SPECIES_SKARMORY,
@@ -1405,6 +1499,8 @@ const u16 gPokedexOrder_Type[] =
     SPECIES_METANG,
     SPECIES_METAGROSS,
     SPECIES_JIRACHI,
+
+    // FIRE Type
     SPECIES_CHARMANDER,
     SPECIES_CHARMELEON,
     SPECIES_VULPIX,
@@ -1431,6 +1527,8 @@ const u16 gPokedexOrder_Type[] =
     SPECIES_NUMEL,
     SPECIES_CAMERUPT,
     SPECIES_MAGCARGO,
+
+    // WATER Type
     SPECIES_SQUIRTLE,
     SPECIES_WARTORTLE,
     SPECIES_BLASTOISE,
@@ -1501,6 +1599,8 @@ const u16 gPokedexOrder_Type[] =
     SPECIES_CARVANHA,
     SPECIES_SHARPEDO,
     SPECIES_CRAWDAUNT,
+
+    // GRASS Type
     SPECIES_TANGELA,
     SPECIES_CHIKORITA,
     SPECIES_BAYLEEF,
@@ -1534,6 +1634,8 @@ const u16 gPokedexOrder_Type[] =
     SPECIES_NUZLEAF,
     SPECIES_SHIFTRY,
     SPECIES_CACTURNE,
+
+    // ELECTRIC Type
     SPECIES_PIKACHU,
     SPECIES_RAICHU,
     SPECIES_VOLTORB,
@@ -1553,6 +1655,8 @@ const u16 gPokedexOrder_Type[] =
     SPECIES_ZAPDOS,
     SPECIES_MAGNEMITE,
     SPECIES_MAGNETON,
+
+    // PSYCHIC Type
     SPECIES_ABRA,
     SPECIES_KADABRA,
     SPECIES_ALAKAZAM,
@@ -1576,6 +1680,8 @@ const u16 gPokedexOrder_Type[] =
     SPECIES_XATU,
     SPECIES_LUGIA,
     SPECIES_CELEBI,
+
+    // ICE Type
     SPECIES_SNORUNT,
     SPECIES_GLALIE,
     SPECIES_REGICE,
@@ -1588,6 +1694,8 @@ const u16 gPokedexOrder_Type[] =
     SPECIES_WALREIN,
     SPECIES_JYNX,
     SPECIES_SMOOCHUM,
+
+    // DRAGON Type
     SPECIES_DRATINI,
     SPECIES_DRAGONAIR,
     SPECIES_BAGON,
@@ -1598,6 +1706,8 @@ const u16 gPokedexOrder_Type[] =
     SPECIES_RAYQUAZA,
     SPECIES_LATIAS,
     SPECIES_LATIOS,
+
+    // DARK Type
     SPECIES_UMBREON,
     SPECIES_POOCHYENA,
     SPECIES_MIGHTYENA,
