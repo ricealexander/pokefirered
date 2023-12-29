@@ -9,7 +9,7 @@
 * [ ] **National Pokédex is obtained** as soon as player beats the Elite Four
 <br><br>
 * [ ] **Disable Evolution/Trade Restrictions**
-  * [ ] Allow non-Kanto Pokémon to evolve by Level-Up
+  * [x] Allow non-Kanto Pokémon to evolve
   * [x] Allow non-Kanto Pokémon to evolve with Trade Items
   * [x] Allow non-Kanto Pokémon to evolve with Evolution Stones
   * [ ] Allow non-Kanto Pokémon to be traded
