@@ -397,7 +397,6 @@ static void ItemUseCB_RestorePP(u8 taskId, TaskFunc func);
 static void ItemUseCB_ReplaceMoveWithTMHM(u8 taskId, TaskFunc func);
 static void Task_ReplaceMoveWithTMHM(u8 taskId);
 static void CB2_UseEvolutionStone(void);
-static bool8 MonCanEvolve(void);
 
 static EWRAM_DATA struct PartyMenuInternal *sPartyMenuInternal = NULL;
 EWRAM_DATA struct PartyMenu gPartyMenu = {0};
@@ -2559,7 +2558,7 @@ static u8 DisplaySelectionWindow(u8 windowType)
     for (i = 0; i < sPartyMenuInternal->numActions; ++i)
     {
         u8 fontColorsId = (sPartyMenuInternal->actions[i] >= CURSOR_OPTION_FIELD_MOVES) ? 4 : 3;
-        
+
         AddTextPrinterParameterized4(sPartyMenuInternal->windowId[0], FONT_NORMAL, cursorDimension, (i * 16) + 2, fontAttribute, 0, sFontColorTable[fontColorsId], 0, sCursorOptions[sPartyMenuInternal->actions[i]].text);
     }
     Menu_InitCursorInternal(sPartyMenuInternal->windowId[0], FONT_NORMAL, 0, 2, 16, sPartyMenuInternal->numActions, 0, 1);
@@ -3491,7 +3490,7 @@ static void Task_HandleSwitchItemsYesNoInput(u8 taskId)
     {
     case 0: // Yes, switch items
         RemoveBagItem(gSpecialVar_ItemId, 1);
-        
+
         // No room to return held item to bag
         if (AddBagItem(sPartyMenuItemId, 1) == FALSE)
         {
@@ -3762,7 +3761,7 @@ static void CursorCB_Enter(u8 taskId)
     u8 maxBattlers;
     u8 i;
     const u8 *str;
-    
+
     if (gPartyMenu.chooseMonsBattleType == CHOOSE_MONS_FOR_UNION_ROOM_BATTLE)
     {
         maxBattlers = 2;
@@ -4061,7 +4060,7 @@ static void FieldCallback_Surf(void)
 static bool8 SetUpFieldMove_Surf(void)
 {
     s16 x, y;
-    
+
     GetXYCoordsOneStepInFrontOfPlayer(&x, &y);
     if (MetatileBehavior_IsFastWater(MapGridGetMetatileBehaviorAt(x, y)) != TRUE
      && PartyHasMonWithSurf() == TRUE
@@ -4077,7 +4076,7 @@ static bool8 SetUpFieldMove_Surf(void)
 static void DisplayCantUseSurfMessage(void)
 {
     s16 x, y;
-    
+
     if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
     {
         DisplayPartyMenuStdMessage(PARTY_MSG_ALREADY_SURFING);
@@ -4269,12 +4268,7 @@ static void Task_DoUseItemAnim(u8 taskId)
 static void CB2_DoUseItemAnim(void)
 {
     if (CheckIfItemIsTMHMOrEvolutionStone(gSpecialVar_ItemId) == 2) // Evolution stone
-    {
-        if (MonCanEvolve() == TRUE)
-            StartUseItemAnim_Normal(gPartyMenu.slotId, gSpecialVar_ItemId, CB2_UseEvolutionStone);
-        else
-            StartUseItemAnim_CantEvolve(gPartyMenu.slotId, gSpecialVar_ItemId, gPartyMenu.exitCallback);
-    }
+        StartUseItemAnim_Normal(gPartyMenu.slotId, gSpecialVar_ItemId, CB2_UseEvolutionStone);
     else
         StartUseItemAnim_Normal(gPartyMenu.slotId, gSpecialVar_ItemId, CB2_UseItem);
 }
@@ -4300,7 +4294,7 @@ static void CB2_UseTMHMAfterForgettingMove(void)
         struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
         u8 moveIdx = GetMoveSlotToReplace();
         u16 move = GetMonData(mon, moveIdx + MON_DATA_MOVE1);
-        
+
         RemoveMonPPBonus(mon, moveIdx);
         SetMonMoveSlot(mon, ItemIdToBattleMoveId(gSpecialVar_ItemId), moveIdx);
         AdjustFriendship(mon, FRIENDSHIP_EVENT_LEARN_TMHM);
@@ -5315,15 +5309,6 @@ static void CB2_UseEvolutionStone(void)
     RemoveBagItem(gSpecialVar_ItemId, 1);
 }
 
-static bool8 MonCanEvolve(void)
-{
-    if (!IsNationalPokedexEnabled()
-     && GetEvolutionTargetSpecies(&gPlayerParty[gPartyMenu.slotId], EVO_MODE_ITEM_USE, gSpecialVar_ItemId) > KANTO_DEX_COUNT)
-        return FALSE;
-    else
-        return TRUE;
-}
-
 u8 GetItemEffectType(u16 item)
 {
     const u8 *itemEffect;
@@ -5616,7 +5601,7 @@ static void RemoveItemToGiveFromBag(u16 item)
 // but there always should be, and the return is ignored in all uses
 static bool8 ReturnGiveItemToBagOrPC(u16 item)
 {
-    if (gPartyMenu.action == PARTY_ACTION_GIVE_ITEM) 
+    if (gPartyMenu.action == PARTY_ACTION_GIVE_ITEM)
         return AddBagItem(item, 1);
     else
         return AddPCItem(item, 1);
@@ -5706,7 +5691,7 @@ static u8 CheckBattleEntriesAndGetMessage(void)
     u8 i, j;
     struct Pokemon *party = gPlayerParty;
     u8 *order = gSelectedOrderFromParty;
-    
+
     switch (gPartyMenu.chooseMonsBattleType)
     {
     case CHOOSE_MONS_FOR_BATTLE_TOWER:
