@@ -130,7 +130,6 @@ void NewGameInitData(void)
     ClearPlayerLinkBattleRecords();
     InitHeracrossSizeRecord();
     InitMagikarpSizeRecord();
-    EnableNationalPokedex_RSE();
     gPlayerPartyCount = 0;
     ZeroPlayerPartyMons();
     ResetPokemonStorageSystem();
