@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$1" == "firered" ] || [ "$1" == "leafgreen" ] || [ "$1" == "firered_rev1" ] || [ "$1" == "leafgreen_rev1" ]; then
+if [ "$1" == "firered" ] || [ "$1" == "leafgreen" ]; then
   buildname="$1"
   shift
 else
@@ -11,10 +11,6 @@ if [ "$buildname" == "firered" ]; then
   baserom=baserom
 elif [ "$buildname" == "leafgreen" ]; then
   baserom=baserom_lg
-elif [ "$buildname" == "firered_rev1" ]; then
-  baserom=baserom_fr_rev1
-elif [ "$buildname" == "leafgreen_rev1" ]; then
-  baserom=baserom_lg_rev1
 else
   echo unknown buildname $buildname
   exit 1

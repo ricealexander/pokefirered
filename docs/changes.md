@@ -913,11 +913,28 @@
 
 <br><br>
 ## Bugfixes & Optimizations
-* [ ] **Accept `REVISION 1` bugfixes**
+* [ ] **Fix the held item loss glitch**
+* Kadabra, Haunter, Machoke, Graveler lose their hold item when they evolve via trade
+* [ ] **Player can retain S.S. Ticket** if they skip the Cut Master but start the Sevii Islands plot
+* [ ] **All strains of Pokérus available**
+* [ ] **Investigate Safari Zone Mechanics** and tweak them if needed. The optimal strategy should not be to just hurl Poké Balls
+* [ ] **Nidoking can breed with Nidoqueen**
+* [ ] **Cerulean City man has additional dialogue**. He is supposed to have several dialogue options and gives the player berries based on different conditions
+* [ ] **Correct typo in Teachy TV items program** “Key Items Pocket” is mis-spelled as “Key Items Pokcet”
+* [ ] **Create a shortcut to open the [Debug Menu](https://tcrf.net/Proto:Pok%C3%A9mon_FireRed_and_LeafGreen/Debug_Menu)**
+<br><br>
+* [x] **Accept `REVISION 1` bugfixes**
   * [x] Fix errors in Pokédex description
   * [x] Fix Pokédex bug that crops category labels (Squirtle is the “Tiny Turtle” Pokémon, not the “Tiny” Pokémon)
+  * [x] Accept text changes in Help System
+  * [x] Check for memory in `main.c`
+  * [x] Correction in `DaycarePrintMonLv1()`
+  * [x] Correction in `IntroCB_GF_RevealLogo()`
+  * [x] Use `REVISION 0` date for Build metadata
+  * [x] Remove `REVISION` flag from build files and related documentation
+  * [x] Remove `REVISION` flag
 <br><br>
-* [ ] **Accept `BUGFIX` bugfixes**
+* [x] **Accept `BUGFIX` bugfixes**
   * [x] Fix Roar bug when used by Roaming Legendaries (when Roar is used, the roamer will now continue roaming)
   * [x] **Fix Roaming Legendaries IV Bug**
   * [x] Remove duplicate call to display speed after level-up
@@ -926,8 +943,8 @@
   * [x] Accept bug fix in Berry Crush minigame
   * [x] Accept all bug fixes in Dodrio Berry Picking minigame
   * [x] Add terminator to prevent intro scene from loading too many assets
-  * [x] Ensure the Trade Pokeball animation runs correctly
-  * [x] Ensure that Pokemon HP cannot be negative when re-fetching stats
+  * [x] Ensure the Trade Poké Ball animation runs correctly
+  * [x] Ensure that Pokémon HP cannot be negative when re-fetching stats
   * [x] Ensure that a stat modified by a nature and boosts is never greater than the max u16 that stores it
   * [x] Correct incorrect sprites for Agatha and Lance in the `FacilityClassToTrainerClass` tables
   * [x] Prevent overflow error when reading Fishing data from the encounter table
@@ -942,17 +959,18 @@
   * [x] Correction in `UpdateCommunicationCounts()`
   * [x] Remove `BUGFIX` constant
 <br><br>
-* [ ] **Accept `UBFIX` bugfixes**
-<br><br>
-* [ ] **Fix the held item loss glitch**
-* Kadabra, Haunter, Machoke, Graveler lose their hold item when they evolve via trade
-* [ ] **Player can retain S.S. Ticket** if they skip the Cut Master but start the Sevii Islands plot
-* [ ] **All strains of Pokérus available**
-* [ ] **Investigate Safari Zone Mechanics** and tweak them if needed. The optimal strategy should not be to just hurl Poké Balls
-* [ ] **Nidoking can breed with Nidoqueen**
-* [ ] **Cerulean City man has additional dialogue**. He is supposed to have several dialogue options and gives the player berries based on different conditions
-* [ ] **Correct typo in Teachy TV items program** “Key Items Pocket” is mis-spelled as “Key Items Pokcet”
-* [ ] **Create a shortcut to open the [Debug Menu](https://tcrf.net/Proto:Pok%C3%A9mon_FireRed_and_LeafGreen/Debug_Menu)**
+* [x] **Accept `UBFIX` bugfixes**
+  * [x] Fix division function so it cannot divide by zero
+  * [x] Avoid crashing in `GetObjectEventFlagIdByLocalIdAndMap`
+  * [x] Avoid out of bounds error in `SavedMapViewIsEmpty()`
+  * [x] Accept fix in Dodrio Berry Picking minigame
+  * [x] Accept all music player fixes
+  * [x] Correction in `Cmd_if_status_not_in_party()`
+  * [x] Correction in `InitEasyChatPhrases()`
+  * [x] Correction in `GetIncomingConnection()`
+  * [x] Correction in `MultiMove_GetMonsFromSelection()`
+  * [x] Correction in `IsPartnerActivityAcceptable()`
+  * [x] Remove `UBFIX` constant
 <br><br>
 * [ ] **Deprecate unused content**
   * [x] Remove unused Pokédex descriptions (dummy text)

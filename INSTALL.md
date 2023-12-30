@@ -52,7 +52,7 @@ WSL1 is the preferred terminal to build **pokefirered**. The following instructi
     <details>
         <summary><i>Notes...</i></summary>
 
-   >   Note 1: If a dialog pops up asking for you to sign into a Microsoft Account, then just close the dialog.  
+   >   Note 1: If a dialog pops up asking for you to sign into a Microsoft Account, then just close the dialog.
    >   Note 2: If the link does not work, then open the Microsoft Store manually, and search for the Ubuntu app (choose the one with no version number).
     </details>
 
@@ -77,8 +77,6 @@ Some tips before proceeding:
     sudo apt update && sudo apt upgrade
     ```
 
-> Note: If the repository you plan to build has an **[older revision of the INSTALL.md](https://github.com/pret/pokefirered/blob/b7a6240/INSTALL.md)**, then follow the [legacy WSL1 instructions](docs/legacy_WSL1_INSTALL.md) from here.
-
 4. Certain packages are required to build pokefirered. Install these packages by running the following command:
 
     ```bash
@@ -102,8 +100,8 @@ cd /mnt/c/Users/<user>/Desktop/decomps
 <details>
     <summary><i>Notes...</i></summary>
 
->   Note 1: The Windows C:\ drive is called /mnt/c/ in WSL.  
->   Note 2: If the path has spaces, then the path must be wrapped with quotations, e.g. `cd "/mnt/c/users/<user>/Desktop/decomp folder"`.  
+>   Note 1: The Windows C:\ drive is called /mnt/c/ in WSL.
+>   Note 2: If the path has spaces, then the path must be wrapped with quotations, e.g. `cd "/mnt/c/users/<user>/Desktop/decomp folder"`.
 >   Note 3: Windows path names are case-insensitive so adhering to capitalization isn't needed
 </details>
 
@@ -149,9 +147,9 @@ Note that in msys2, Copy is Ctrl+Insert and Paste is Shift+Insert.
     <details>
         <summary><i>Notes...</i></summary>
 
-    >   Note 1: While not shown, msys uses forward slashes `/` instead of backwards slashes `\` as the directory separator.  
-    >   Note 2: If the path has spaces, then the path must be wrapped with quotations, e.g. `cd "Downloads/My Downloads"`.  
-    >   Note 3: Windows path names are case-insensitive so adhering to capitalization isn’t needed.   
+    >   Note 1: While not shown, msys uses forward slashes `/` instead of backwards slashes `\` as the directory separator.
+    >   Note 2: If the path has spaces, then the path must be wrapped with quotations, e.g. `cd "Downloads/My Downloads"`.
+    >   Note 3: Windows path names are case-insensitive so adhering to capitalization isn’t needed.
     >   Note 4: If libpng was saved elsewhere, you will need to specify the full path to where libpng was downloaded, e.g. `cd c:/devkitpro/msys2` if it was saved there.
     </details>
 
@@ -246,7 +244,7 @@ Note that the directory **must exist** in Windows. If you want to store pokefire
 <details>
     <summary><i>Notes...</i></summary>
 
->   Note 1: If the path has spaces, then the path must be wrapped with quotations, e.g. `cd "c:/users/<user>/Desktop/decomp folder"`.  
+>   Note 1: If the path has spaces, then the path must be wrapped with quotations, e.g. `cd "c:/users/<user>/Desktop/decomp folder"`.
 >   Note 2: Windows path names are case-insensitive so adhering to capitalization isn't needed
 </details>
 
@@ -456,17 +454,12 @@ If it has built successfully you will have the output file **pokefirered.gba** i
 > If you switched terminals since the last build (e.g. from msys2 to WSL1), you must run `make clean-tools` once before any subsequent `make` commands.
 </details>
 
-## Build pokeleafgreen and REV1
+## Build pokeleafgreen
 Pokemon FireRed and LeafGreen were both released together. As such, this project is capable of building both ROMs. To do so, simply run
 ```bash
 make leafgreen
 ```
 
-This project can also build the version 1.1 ROMs of both FireRed and LeafGreen. To build each, run
-```bash
-make firered_rev1  # for FireRed 1.1
-make leafgreen_rev1  # for LeafGreen 1.1
-```
 
 # Building guidance
 
@@ -490,7 +483,7 @@ Replace `<output of nproc>` with the number that the `nproc` command returned.
 
 For contributing, or if you'd simply like to verify that your ROM is identical to the original game, run:
 ```bash
-make compare  # or compare_leafgreen, compare_firered_rev1, compare_leafgreen_rev1
+make compare  # or compare_leafgreen
 ```
 If it matches, you will see the following at the end of the output:
 ```bash
@@ -506,7 +499,7 @@ shasum: WARNING: 1 computed checksum did NOT match
 
 This project supports the `arm-none-eabi-gcc` compiler included with devkitARM. If devkitARM (a.k.a. gba-dev) has already been installed as part of the platform-specific instructions, simply run:
 ```bash
-make modern  # or leafgreen_modern, firered_rev1_modern, leafgreen_rev1_modern
+make modern  # or leafgreen_modern
 ```
 Otherwise, follow the instructions below to install devkitARM.
 ### Installing devkitARM on WSL1

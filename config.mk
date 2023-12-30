@@ -1,7 +1,6 @@
 # Default variables
 
 GAME_VERSION  ?= FIRERED
-GAME_REVISION ?= 0
 GAME_LANGUAGE ?= ENGLISH
 MODERN        ?= 0
 COMPARE       ?= 0
@@ -21,17 +20,6 @@ GAME_CODE   := BPG
 BUILD_NAME  := leafgreen
 else
 $(error unknown version $(GAME_VERSION))
-endif
-endif
-
-# Revision
-ifeq ($(GAME_REVISION),0)
-BUILD_NAME  := $(BUILD_NAME)
-else
-ifeq ($(GAME_REVISION),1)
-BUILD_NAME  := $(BUILD_NAME)_rev1
-else
-$(error unknown revision $(GAME_REVISION))
 endif
 endif
 

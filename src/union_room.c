@@ -1256,11 +1256,7 @@ static bool32 IsPartnerActivityAcceptable(u32 activity, u32 group)
     if (group == 0xFF)
         return TRUE;
 
-#ifdef UBFIX
     if (group < ARRAY_COUNT(sAcceptedActivityIds))
-#else
-    if (group <= ARRAY_COUNT(sAcceptedActivityIds)) // UB: <= may access data outside the array
-#endif
     {
         const u8 *bytes = sAcceptedActivityIds[group];
 

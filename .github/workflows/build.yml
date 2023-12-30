@@ -11,7 +11,6 @@ jobs:
     env:
       GAME_VERSION: FIRERED
       GAME_LANGUAGE: ENGLISH
-      GAME_REVISION: 0
       MODERN: 0
       COMPARE: 1
     steps:
@@ -47,22 +46,9 @@ jobs:
         run: |
           make -j${nproc} all syms
 
-      - name: Compare FireRed rev1
-        env:
-          GAME_REVISION: 1
-        run: |
-          make -j${nproc} all syms
-
       - name: Compare LeafGreen
         env:
           GAME_VERSION: LEAFGREEN
-        run: |
-          make -j${nproc} all syms
-
-      - name: Compare LeafGreen rev1
-        env:
-          GAME_VERSION: LEAFGREEN
-          GAME_REVISION: 1
         run: |
           make -j${nproc} all syms
 

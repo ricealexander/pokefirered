@@ -1986,10 +1986,8 @@ static void HandlePickBerries(void)
                 sGame->players[playerIdPicked].comm.ateBerry = TRUE;
 
 
-#ifdef UBFIX
                 if (playerIdMissed != PLAYER_NONE)
-#endif
-                    sGame->players[playerIdMissed].comm.missedBerry = TRUE; // UB: playerIdMissed can be PLAYER_NONE here, which is out of bounds
+                    sGame->players[playerIdMissed].comm.missedBerry = TRUE;
 
                 sGame->berriesEaten[playerIdPicked]++;
                 IncrementBerryResult(0, column, playerIdPicked);
