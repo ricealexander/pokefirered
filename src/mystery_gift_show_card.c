@@ -71,7 +71,7 @@ static const struct WindowTemplate sWindowTemplates[] = {
         .tilemapTop = 1,
         .width = 25,
         .height = 4,
-        .paletteNum = 15, 
+        .paletteNum = 15,
         .baseBlock = 0x29c
     },
     [WIN_BODY] = {
@@ -80,7 +80,7 @@ static const struct WindowTemplate sWindowTemplates[] = {
         .tilemapTop = 6,
         .width = 28,
         .height = 8,
-        .paletteNum = 15, 
+        .paletteNum = 15,
         .baseBlock = 0x1bc
     },
     [WIN_FOOTER] = {
@@ -89,7 +89,7 @@ static const struct WindowTemplate sWindowTemplates[] = {
         .tilemapTop = 14,
         .width = 28,
         .height = 5,
-        .paletteNum = 15, 
+        .paletteNum = 15,
         .baseBlock = 0x130
     }
 };
@@ -326,7 +326,7 @@ static void BufferCardText(void)
     // Copy footer line 1
     memcpy(sWonderCardData->footerLine1Text, sWonderCardData->card.footerLine1Text, WONDER_CARD_TEXT_LENGTH);
     sWonderCardData->footerLine1Text[WONDER_CARD_TEXT_LENGTH] = EOS;
-    
+
     // Copy footer line 2
     switch (sWonderCardData->card.type)
     {
@@ -339,12 +339,12 @@ static void BufferCardText(void)
         break;
     case CARD_TYPE_LINK_STAT:
         sWonderCardData->footerLine2Text[0] = EOS;
-        
+
         // Load stats
         stats[0] = sWonderCardData->cardMetadata.battlesWon < MAX_WONDER_CARD_STAT ? sWonderCardData->cardMetadata.battlesWon : MAX_WONDER_CARD_STAT;
         stats[1] = sWonderCardData->cardMetadata.battlesLost < MAX_WONDER_CARD_STAT ? sWonderCardData->cardMetadata.battlesLost : MAX_WONDER_CARD_STAT;
         stats[2] = sWonderCardData->cardMetadata.numTrades < MAX_WONDER_CARD_STAT ? sWonderCardData->cardMetadata.numTrades : MAX_WONDER_CARD_STAT;
-        
+
         // Init stat text arrays
         for (i = 0; i < ARRAY_COUNT(sWonderCardData->statTextData); i++)
         {
@@ -404,7 +404,7 @@ static void DrawCardWindow(u8 whichWindow)
         if (x < 0)
             x = 0;
         AddTextPrinterParameterized3(windowId, FONT_NORMAL_COPY_2, x, 17, sTextColorTable[sWonderCardData->gfx->titleTextPal], 0, sWonderCardData->subtitleText);
-        
+
         // Print id number
         if (sWonderCardData->card.idNumber != 0)
             AddTextPrinterParameterized3(windowId, FONT_NORMAL, 166, 17, sTextColorTable[sWonderCardData->gfx->titleTextPal], 0, sWonderCardData->idNumberText);
@@ -421,7 +421,7 @@ static void DrawCardWindow(u8 whichWindow)
                                      sFooterTextOffsets[sWonderCardData->card.type],
                                      sTextColorTable[sWonderCardData->gfx->footerTextPal],
                                      0, sWonderCardData->footerLine1Text);
-        
+
         // Print footer line 2
         if (sWonderCardData->card.type != CARD_TYPE_LINK_STAT)
         {
@@ -461,14 +461,14 @@ static void CreateCardSprites(void)
 {
     u8 i = 0;
     sWonderCardData->monIconSpriteId = SPRITE_NONE;
-    
+
     // Create icon sprite
     if (sWonderCardData->cardMetadata.iconSpecies != SPECIES_NONE)
     {
         sWonderCardData->monIconSpriteId = CreateMonIcon_HandleDeoxys(MailSpeciesToIconSpecies(sWonderCardData->cardMetadata.iconSpecies), SpriteCallbackDummy, 220, 20, 0, FALSE);
         gSprites[sWonderCardData->monIconSpriteId].oam.priority = 2;
     }
-    
+
     // Create stamp sprites
     if (sWonderCardData->card.maxStamps != 0 && sWonderCardData->card.type == CARD_TYPE_STAMP)
     {
@@ -491,11 +491,11 @@ static void CreateCardSprites(void)
 static void DestroyCardSprites(void)
 {
     u8 i = 0;
-    
+
     // Destroy icon sprite
     if (sWonderCardData->monIconSpriteId != SPRITE_NONE)
         DestroyMonIcon(&gSprites[sWonderCardData->monIconSpriteId]);
-    
+
     // Destroy stamp sprites
     if (sWonderCardData->card.maxStamps != 0 && sWonderCardData->card.type == CARD_TYPE_STAMP)
     {
@@ -504,11 +504,7 @@ static void DestroyCardSprites(void)
             if (sWonderCardData->stampSpriteIds[i][0] != SPRITE_NONE)
             {
                 DestroySprite(&gSprites[sWonderCardData->stampSpriteIds[i][0]]);
-            #ifdef BUGFIX
                 if (sWonderCardData->stampSpriteIds[i][1] != SPRITE_NONE)
-            #else
-                if (sWonderCardData->stampSpriteIds[i][0] != SPRITE_NONE)
-            #endif
                     DestroyMonIcon(&gSprites[sWonderCardData->stampSpriteIds[i][1]]);
             }
         }

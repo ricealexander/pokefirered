@@ -550,7 +550,7 @@ static const u8 *const sMessages[] = {
     [MSG_ONLY_MON2]                  = gText_OnlyPkmnForBattle, // Same as above but without color formatting
     [MSG_WAITING_FOR_FRIEND]         = gText_WaitingForFriendToFinish,
     [MSG_FRIEND_WANTS_TO_TRADE]      = gText_FriendWantsToTrade,
-    [MSG_MON_CANT_BE_TRADED]         = gText_PkmnCantBeTradedNow, 
+    [MSG_MON_CANT_BE_TRADED]         = gText_PkmnCantBeTradedNow,
     [MSG_EGG_CANT_BE_TRADED]         = gText_EggCantBeTradedNow,
     [MSG_FRIENDS_MON_CANT_BE_TRADED] = gText_OtherTrainersPkmnCantBeTraded
 };
@@ -1686,7 +1686,7 @@ static void Leader_HandleCommunication(void)
         if (sTradeMenu->playerSelectStatus == STATUS_READY
          && sTradeMenu->partnerSelectStatus == STATUS_READY)
         {
-            // Both players have selected a pokemon to trade 
+            // Both players have selected a pokemon to trade
             sTradeMenu->callbackId = CB_SET_SELECTED_MONS;
             QueueLinkData(LINKCMD_SET_MONS_TO_TRADE, sTradeMenu->cursorPosition);
             sTradeMenu->playerSelectStatus = sTradeMenu->partnerSelectStatus = STATUS_NONE;
@@ -2273,7 +2273,7 @@ static void DrawSelectedMonScreen(u8 whichParty)
         StoreSpriteCallbackInData6(&gSprites[sTradeMenu->partySpriteIds[selectedMonParty][partyIdx]], SpriteCB_MonIcon);
         sTradeMenu->drawSelectedMonState[whichParty]++;
         Trade_MoveSelectedMonToTarget(&gSprites[sTradeMenu->partySpriteIds[selectedMonParty][partyIdx]]);
-        
+
         CopyToBgTilemapBufferRect_ChangePalette(1, sTradePartyBoxTilemap, whichParty * 15, 0, 15, 17, 0);
         CopyBgTilemapBufferToVram(1);
         CopyBgTilemapBufferToVram(0);
@@ -2754,23 +2754,11 @@ static u32 CanTradeSelectedMon(struct Pokemon * playerParty, int partyCount, int
     // Cant trade Eggs or non-Kanto mons if player doesn't have National Dex
     if (!IsNationalPokedexEnabled())
     {
-        // See comment below
-    #ifdef BUGFIX
         if (species2[monIdx] == SPECIES_EGG)
             return CANT_TRADE_EGG_YET;
-    #endif
 
         if (species2[monIdx] > KANTO_SPECIES_END)
             return CANT_TRADE_NATIONAL;
-
-        // This is meant to be SPECIES_EGG. There are obviously no circumstances
-        // where you're allowed to trade SPECIES_NONE, so it wouldn't make sense to
-        // only check this if the National Dex is missing. SPECIES_EGG will accidentally
-        // be handled instead by the conditional above. Both of these problems are fixed in Emerald.
-    #ifndef BUGFIX
-        if (species2[monIdx] == SPECIES_NONE)
-            return CANT_TRADE_EGG_YET;
-    #endif
     }
 
     partner = &gLinkPlayers[GetMultiplayerId() ^ 1];

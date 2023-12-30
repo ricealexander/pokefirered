@@ -61,7 +61,7 @@ enum {
 // Background IDs for Game Freak logo scene
 enum {
     BG_GF_TEXT_LOGO = 2,
-    BG_GF_BACKGROUND   
+    BG_GF_BACKGROUND
 };
 
 
@@ -872,20 +872,13 @@ static const struct CompressedSpriteSheet sFightSceneSpriteSheets[] = {
 	{sScene3_RecoilDust_Gfx,   0x200,  GFXTAG_SCENE3_RECOIL_DUST}
 };
 
-// POTENTIAL UB
-// This array is passed to LoadSpritePalettes in LoadFightSceneSpriteGraphics.
-// LoadSpritePalettes uses a {0} entry to signal end of array.
-// Because such an entry is absent in this case, the function
-// continues reading into the next .rodata section.
 static const struct SpritePalette sFightSceneSpritePalettes[] = {
 	{sGengar_Pal,            PALTAG_GENGAR},
 	{sNidorino_Pal,          PALTAG_NIDORINO},
 	{sScene3_Grass_Pal,      PALTAG_SCENE3_GRASS},
 	{sScene3_Swipe_Pal,      PALTAG_SCENE3_SWIPE},
 	{sScene3_RecoilDust_Pal, PALTAG_SCENE3_RECOIL_DUST},
-#ifdef BUGFIX
-    {0}
-#endif
+  {0}
 };
 
 static void VBlankCB_Copyright(void)
@@ -1097,7 +1090,7 @@ static void SetIntroCB(struct IntroSequenceData * ptr, IntroCallback cb)
 static void Task_CallIntroCallback(u8 taskId)
 {
     struct IntroSequenceData * ptr = (void *)GetWordTaskArg(taskId, 0);
-    
+
     // End intro early if player presses A/Start/Select
     if (JOY_NEW(A_BUTTON | START_BUTTON | SELECT_BUTTON) && ptr->callback != IntroCB_ExitToTitleScreen)
         SetIntroCB(ptr, IntroCB_ExitToTitleScreen);
@@ -2618,7 +2611,7 @@ static void SpriteCB_RecoilDust(struct Sprite *sprite)
             DestroySprite(sprite);
         break;
     }
-    
+
     // Recoil dust flashes in and out
     if (++sInvisibleTimer > 1)
     {
@@ -2773,7 +2766,7 @@ static void SpriteCB_NidorinoAttack(struct Sprite *sprite)
         sprite->sTimer += sprite->sSpeed;
         sprite->x2 = -(sprite->sTimer >> 4);
         sprite->y2 = -((gSineTable[sprite->sTimer >> 4] * sNidorinoJumpMult) >> sNidorinoJumpDiv);
-        sprite->sShakeTimer++; // Does nothing   
+        sprite->sShakeTimer++; // Does nothing
         if (sprite->sSpeed > 12)
             sprite->sSpeed--; // Decelerate as jump progresses
         if ((sprite->sTimer >> 4) > 63)
