@@ -21,7 +21,6 @@
   * TMs / HMs
   * Move Tutors
   * Move Relearner
-  * Physical/Special Split
 <br><br>
 * **Battles**
   * Fairy Type
@@ -39,6 +38,7 @@
   * Berry Spots
   * Breeding
   * Decorations
+  * EV-Training
   * Following Pokémon
   * Fly
   * Game Corner
@@ -50,6 +50,7 @@
   * Cameos
   * New NPCs
   * Merchants
+  * Tileset Changes
 <br><br>
 * **Visuals & Audio**
   * User Interface
@@ -62,7 +63,9 @@
   * Auto-Save
 <br><br>
 * **Bugfixes & Optimizations**
-
+<br><br>
+* **Optional Changes**
+  * Fairy Type
 
 
 
@@ -72,22 +75,26 @@
 
 <!--------------------------------------------------------- National Pokédex --
 8b  8       w   w                  8   888b.       8             8
-8Ybm8 .d88 w8ww w .d8b. 8d8b. .d88 8   8  .8 .d8b. 8.dP .d88b .d88 .d88b Yb dP
+8Ybm8 .d88 w8ww w  d8b  8d8b. .d88 8   8  .8  d8b  8 dP .d88b .d88 .d88b Yb dP
 8  “8 8  8  8   8 8’ .8 8P Y8 8  8 8   8wwP’ 8’ .8 88b  8 .P’ 8  8 8 .P’  `8.
-8   8 `Y888 Y8P 8 `Y8P’ 8   8 `Y88 8   8     `Y8P’ 8 Yb `Y88P `Y88 `Y88P dP Yb
+8   8 `Y888 Y8P 8  Y8P  8   8 `Y88 8   8      Y8P  8 Yb `Y88P `Y88 `Y88P dP Yb
 ------------------------------------------------------------------------------>
 
 <br><br>
 ## National Pokédex
-* [x] **Rearrange Pokédex entries** (Kanto Dex now has 170 Pokémon)
-<br><br>
 * [ ] **National Pokédex is obtained** as soon as player beats the Elite Four
+<br><br>
+* [ ] **Implement Pokémon sprites into the Pokédex interface** (may be too large)
 <br><br>
 * [x] **Improve Sort Modes**
   * [x] Use Pokédex # as secondary-sorting for Lightest, Smallest, and Type sorts
   * [x] Update to reflect changes to the Pokédex entries
 <br><br>
-* [ ] **Implement Pokémon sprites into the Pokédex interface** (may be too large)
+* [ ] **Add more information to the Pokédex**
+  * [ ] Base Stats
+  * [ ] Level-Up Learnsets
+  * [ ] Evolution Methods
+  * [ ] Weaknesses / Resistances
 
 ### Reorder Pokédex Entries
   * [x] **Group Evolutionary Lines** (Baby Pokémon, Gen II Evolutions)
@@ -142,9 +149,9 @@
 
 <!------------------------------------------------------------------ Pokémon --
     888b.       8
-    8  .8 .d8b. 8.dP .d88b 8d8b.d8b. .d8b. 8d8b.
+    8  .8  d8b  8 dP .d88b 8.8b d8b   d8b  8d8b.
     8wwP’ 8’ .8 88b  8 .P’ 8P Y8P Y8 8’ .8 8P Y8
-    8     `Y8P’ 8 Yb `Y88P 8   8   8 `Y8P’ 8   8
+    8      Y8P  8 Yb `Y88P 8   8   8  Y8P  8   8
 ------------------------------------------------------------------------------>
 
 <br><br>
@@ -157,8 +164,11 @@
 * [ ] **Base Stats** are updated
 * [ ] **Hold Items** are updated
 <br><br>
-* [ ] **Moves** are updated (primarily based on HGSS learnsets with influence from Let’s Go)
+* [ ] **Moves** are updated
   * [ ] **Base Learnsets** are updated
+  1. Make learnsets as close to HeartGold/SoulSilver as possible
+  2. Compare learnsets against Let's Go and US/UM learnsets, identifying any drastic differences
+  3. Add Return into level-up set for friendship evolutions
   * ⚠️ Pay attention to how this affects Trainers and early-route Pokémon. For example, FRLG moved Zubat’s Supersonic to above the level cap that Zubat can appear in Mt. Moon, as is Paras’s Poison Powder. Using the revamped learnsets from Gen 4 would lead to a significant increase in players facing Confusion and Poison in Mt. Moon
   * [ ] **TM** learnsets are updated
   * ⚠️ Some Pokémon currently learn TMs only through Egg Moves. Make sure to remove these from the Egg Move list when they’re added to the TMs list
@@ -305,9 +315,9 @@
 
 <!-------------------------------------------------------------------- Moves --
     8b   d8
-    8YbmdP8 .d8b. Yb  dP .d88b d88b
+    8YbmdP8  d8b  Yb  dP .d88b d88b
     8  “  8 8’ .8  YbdP  8 .P’ `Yb.
-    8     8 `Y8P’   YP   `Y88P Y88P
+    8     8  Y8P    YP   `Y88P Y88P
 ------------------------------------------------------------------------------>
 
 <br><br>
@@ -315,7 +325,7 @@
 
 ### Changes in Future Generations
 * [ ] Update **Move Names** (Dragonbreath to Dragon Breath)
-* [ ] Update **Move Types** (Fairy types, Curse from ??? to Ghost)
+* [ ] Update **Move Types** (Curse from ??? to Ghost, Hidden Power and Struggle from Normal to ???)
 * [ ] Update **Move Power**
 * [ ] Update **Move Accuracy**
 * [ ] Update **PP Counts**
@@ -384,12 +394,6 @@
 * an NPC may mention a move they don’t remember teaching:<br>_“My Ninetales remembered Flamethrower. I don’t remember teaching that.”_
 * [ ] **Move Relearner is free**
 
-### Physical/Special Split
-* This open-source project may help [tezemi/pokefirered-updated](https://github.com/tezemi/pokefirered-updated)
-  * [ ] Each move is Physical or Special
-  * [ ] Moves are labelled Physical or Special
-  * [ ] Hidden Power is a Special Move
-
 
 
 
@@ -431,12 +435,6 @@
 * Referencing G/S/C/HG/SS, existing Trainer Classes are given Johto Pokémon to use. These are sprinkled across Kanto trainers
 * In Kanto, only give trainers Johto Pokémon that can be captured in Kanto mainland. An exception can be given for SS Anne trainers if dialogue is included that they cannot be captured in Kanto
 
-### Fairy Type
-* [ ] **Pokémon are typed to Fairy**
-* [ ] **Moves are typed to Fairy**
-* [ ] **Type-Chart is updated to match Gen 6**
-* This open-source project may help: [tezemi/pokefirered-updated](https://github.com/tezemi/pokefirered-updated)
-
 ### Gym Leaders
 * [ ] **Rebattle Gym Leaders** once Elite Four is defeated
 * Their Final Teams are based on all canon appearances but primarily HeartGold/SoulSilver
@@ -466,7 +464,7 @@
 
 <!-------------------------------------------------------------------- Items --
     888  w
-     8  w8ww .d88b 8d8b.d8b. d88b
+     8  w8ww .d88b 8.8b d8b  d88b
      8   8   8 .P’ 8P Y8P Y8 `Yb.
     888  Y8P `Y88P 8   8   8 Y88P
 ------------------------------------------------------------------------------>
@@ -592,6 +590,7 @@
 
 <br><br>
 ## Mechanics
+* [ ] Make disobedience slightly less annoying
 
 ### Abilities
 * [ ] **Pickup tables are overhauled** (Base code on Emerald implementation with HG/SS tables)
@@ -648,6 +647,9 @@
   * [ ] **Regi’ Dolls**: gifted by a hiker in Ruin Valley if the player has caught the Legendary Titans
 <br><br>
 * [ ] **Silver Shield** and **Gold Shield** are obtainable
+
+### EV-Training
+* [ ] **EVs per stat are limited at 252 instead of 255**
 
 ### Following Pokémon
 * [ ] **Pokémon follow the player around**
@@ -735,7 +737,7 @@
     Yb        dP            8    8    888b        w 8    8 w
      Yb  db  dP   d8b  8d8b 8  d88    8wwwP 8   8 w 8  d88 w 8d8b   d88
       YbdPYbdP   8’  8 8P   8 8  8    8   b 8b d8 8 8 8  8 8 8P Y8 8  8
-       YP  YP    `Y8P’ 8    8 `Y88    888P’ `Y8P8 8 8 `Y88 8 8   8 `Y88
+       YP  YP     Y8P  8    8 `Y88    888P’ `Y8P8 8 8 `Y88 8 8   8 `Y88
                                                                    wwdP
 ------------------------------------------------------------------------------>
 
@@ -752,7 +754,6 @@
 <br><br>
 * [ ] **Revise Sevii Island Plot**
 * Canonically, Celio is setting up the technology to trade with the Hoenn region. With trade restrictions lifted, this plot no longer makes sense. It may be possible to retain much of the plot by changing dialogue to focus on connecting with the whole world. Or to give Celio a bigger project that Team Rocket’s presence is directly conflicting with
-
 
 ### Cameos
 * [ ] **“Black Belt Koichi” is renamed to “Karate Master Koichi”**
@@ -806,6 +807,17 @@
   <br>_“Here I sell tokens for mourners visiting Pokémon Tower.”_
 * [ ] **Postman sells different mails**
 
+### Tileset Changes
+* [ ] **Colors are incorporated into each town to match its name**
+  * [ ] Pokémon Center interior colors are based on town
+* [ ] **Gym palette matches the color of its type specialty**
+* [ ] **Dome and Helix fossils have separate overworld graphics**
+* [ ] **Evidence of construction surrounds the man in Vermilion City**
+* [ ] Cerulean Caverns graphics are updated to features crystals such as in the Let’s Go games and HGSS and a revised color scheme. The crystals flicker like candlelight
+* [ ] Pokémon Mansion graphics are updated to feature laboratory equipment resembling the Let’s Go games
+* [ ] **On Route 13, east of fence maze**, the grassy area should have a ledge to jump out onto the docks, like in Gen 4
+* [ ] **Viridian Forest** features benches, fences, flowers, and rearrangements in grass to more closely resemble a park.
+
 
 
 
@@ -817,7 +829,7 @@
    Yb    dP w                 8         dP8P       db             8 w
     Yb  dP  w d88b 8   8  d88 8 d88b    Ybww      dPYb   8   8  d88 w  d8b
      YbdP   8 `Yb  8b d8 8  8 8 `Yb     dP       dPwwYb  8b d8 8  8 8 8’  8
-      YP    8 Y88P `Y8P8 `Y88 8 Y88P    Yb8b    dP    Yb `Y8P8 `Y88 8 `Y8P’
+      YP    8 Y88P `Y8P8 `Y88 8 Y88P    Yb8b    dP    Yb `Y8P8 `Y88 8  Y8P
 ------------------------------------------------------------------------------>
 
 <br><br>
@@ -831,24 +843,19 @@
 * [ ] **Stats are highlighted based on the Pokémon’s Nature** (boosted in red, reduced in blue)
 * [ ] **Pressing L on the stat screen replaces stats with IVs**
 * [ ] **Pressing R on the stat screen replaces stats with EVs**
+* [ ] **Mystery Gift displays on the home menu** as soon as the Save is created
 <br><br>
 * [ ] **Introduce Level-Up Animation** for when Pokémon are ready to evolve
 * Flametix demoed a [level-up animation](https://www.youtube.com/watch?v=qFnQL1jPz8w). They found an unused animation in Ruby/Sapphire code to flash the EXP Bar on level up. They repurposed it with a more complex animation that only appears if the Pokémon is ready to evolve
+<br><br>
+* [ ] **Display stats in the New Move dialogue**
+  * Presently, The Pokémon interface shows the small sprite, name, and type in the top-left, the list of moves on the right, and the move description on the bottom left. There's not a lot of space to work with
+  * One solution would be to move the Pokémon sprite, name, and type to the right rail, put the moves beneath it (slightly smaller), then shrink the move description panel, and put the Pokémon's stats in the top-left
 
 ### Pokémon Sprites
 * [ ] **Each Pokémon has an animated front-sprite**
 * [ ] **Back-sprites of Johto Pokémon are retouched** (these got less attention in Gen 3 and often have rougher lines/shading
 * [ ] **Pokémon have gender differences**
-
-### Tileset Changes
-* [ ] **Colors are incorporated into each town to match its name**
-  * [ ] Pokémon Center interior colors are based on town
-* [ ] **Gym palette matches the color of its type specialty**
-* [ ] **Dome and Helix fossils have separate overworld graphics**
-* [ ] **Evidence of construction surrounds the man in Vermilion City**
-* [ ] Cerulean Caverns graphics are updated to features crystals such as in the Let’s Go games and HGSS and a revised color scheme. The crystals flicker like candlelight
-* [ ] Pokémon Mansion graphics are updated to feature laboratory equipment resembling the Let’s Go games
-* [ ] **On Route 13, east of fence maze**, the grassy area should have a ledge to jump out onto the docks, like in Gen 4
 
 ### GameBoy Sounds
 * [ ] Implement GameBoy Sounds Key Item
@@ -872,7 +879,7 @@
      d88b        w   w
     8P  Y8 88b  w8ww w  d8b  8d8b  d88b
     8b  d8 8  8  8   8 8’  8 8P Y8 `Yb
-    `Y88P’ 88P’  Y8P 8 `Y8P’ 8   8 Y88P
+    `Y88P’ 88P’  Y8P 8  Y8P  8   8 Y88P
            8
 ------------------------------------------------------------------------------>
 
@@ -985,10 +992,51 @@
 
 
 <br><br>
-Headings are created with https://patorjk.com/software/taag/ with the “Thick” font
-<br>Unicode ’ “” é ¥
+<br><br>
+## Optional Changes
 
-### Other Ideas
+### Fairy Type
+No attacking moves in Gen III were re-typed to Fairy in future generations. In order to implement the Fairy type without changing the Move roster, we MUST make non-canonical changes to Moves, so this is optional.
+* [ ] **Type-Chart is updated to match Gen 6**
+* This open-source project may help: [tezemi/pokefirered-updated](https://github.com/tezemi/pokefirered-updated)
+<br><br>
+* [ ] **Pokémon are typed to Fairy**
+  * [ ] **Fairy**: Cleffa, Clefairy, Clefable, Togepi, Snubbull, Granbull
+  * [ ] **Fairy/Normal**: Igglybuff, Jigglypuff, Wigglytuff, Azurill
+  * [ ] **Fairy/Flying**: Togetic
+  * [ ] **Fairy/Steel**: Mawile
+  * [ ] **Fairy/Water**: Marill, Azumarill
+  * [ ] **Fairy/Psychic**: Mr. Mime, Ralts, Kirlia, Gardevoir
+<br><br>
+* [ ] **Moves changes**
+  * [ ] **Charm**: from Normal to Fairy
+  * [ ] **Moonlight**: from Normal to Fairy
+  * [ ] **Sweet Kiss**: from Normal to Fairy
+  * [ ] **Covet** `NON_CANON` from Normal to Fairy
+  * [ ] **Hyper Voice** `NON_CANON` from Normal to Fairy
+  * [ ] **Double Slap** `NON_CANON` from Normal to Fairy
+  * [ ] **Return** `NON_CANON` from Normal to Fairy
+  * [ ] **Frustration** `NON_CANON` from Normal to Dark
+  * [ ] Add a Move Tutor for Covet
+  * [ ] Implement new Fairy Moves onto Fairy Pokémon Learnsets
+
+
+
+
+
+
+
+
+
+
+<br><br>
+<br><br>
+## Unsorted Ideas
 * [ ] Give the champion ribbon when E4 is beaten
 * [ ] Implement Effort Ribbon
-* [ ] Add more info to Pokédex (SmithPlays added Types, Level Up Moves, Base Stats) - Have an NPC that upgrades your Pokédex?
+* [ ] Give Tail Glow to Ampharos
+* [ ] Review the lists of Male/Female names and look for opportunities to add Easter Eggs to the Anime, Manga, and more.
+  * [ ] Consider "Ash", and "Samuel" for male names for both
+
+Headings are created with https://patorjk.com/software/taag/ with the “Thick” font
+<br>Unicode ’ “” é ¥

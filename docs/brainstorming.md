@@ -1,46 +1,3 @@
-# Fire Red Rejuvinated /<br>Leaf Green Luxuriated
-
-We’ve seen Kanto time and time again. In Red/Blue/Yellow, Gold/Silver/Crystal, FireRed/LeafGreen, HeartGold/SoulSilver, Let’s Go Pikachu & Eevee. Despite this, we have never seen a complete version of Kanto with all core mechanics in tact, all dungeons and locations explorable, and extended Gen 1 Pokémon lines available.
-
-This project builds the definitive version of Kanto. Core mechanics are polished, modern features and quality of life standards are incorporated. This should be the most fleshed out version of Kanto possible while embracing the spirit of the original games.
-
-If you would like to build off of this project, you are welcome to fork it or reuse any code, so long as you include appropriate credits. [See the list of Credits](/#Credits)
-
-
-
-## Project Requirements
-* [ ] Capable of trading with Gen 3 games (R/S/E/FR/LG) on official hardware
-  * It is not possible to battle with Gen 3 games with changes to Pokémon, Typing, and Moves
-  * No changes can be made to the Pokémon data structure and no Hold Items can be added
-  * No new Pokémon or Moves can be added
-* [ ] Compatible with PKHex
-* [ ] Changes are made with strong canonical justification
-* [ ] When mechanics are changed, consideration is taken for NPCs that talk about the mechanic
-  * Text may be added, changed, or removed to remain accurate; review NPC dialogue, Signs, Bookshelves, Teachy TV
-* [ ] This is an appropriate base for other Rom Hacks
-  * Any creative liberties are documented and contain environment flags so they can be disabled
-* [ ] All code is used legally
-  * All code is created for this project or comes from open-source projects. All code taken from these projects is credited appropriately in this README.
-* [ ] This project has an open license
-  * Anyone can build from the project so long as they provide credits for all code used. See below for a breakdown of contributions
-* [ ] All changes made have supporting documentation
-  * See the docs
-
-### What this is not:
-* This is not a 386 catch-em all hack
-  1. All Kanto Pokémon are be obtainable
-  2. Most Johto Pokémon are available. These are only placed when they have a canonical justification or compelling reason
-  3. Hoenn Pokémon are not obtainable
-* This is not a difficulty hack
-  * While not a difficulty hack, enemy teams are stronger, more complex, and have more team members to balance out the new quality of life features and additional resources the player is given
-* This is not a new adventure
-  * Changes may be made to the plot and lore around Kanto and minor characters may be given a little more attention, but it should still feel like FRLG
-
-
-
-----
-
-
 # Brainstorming & Rejected Changes
 
 ### Contents
@@ -50,6 +7,7 @@ If you would like to build off of this project, you are welcome to fork it or re
 * Day/Night Cycle
 * Legendary Pokémon
 * New Battle
+* Physical/Special Split
 * Pokémon Box Link (PC Anywhere)
 
 
@@ -68,6 +26,7 @@ If you would like to build off of this project, you are welcome to fork it or re
 <br><br>
 ## Miscellaneous
 * [ ] **Randomize Silph Co. tiles**
+<br><br>
 * [ ] **Decapitalize Text**
   * [ ] Decapitalize Pokémon Names
   * [ ] Decapitalize Pokédex Category
@@ -223,7 +182,23 @@ These battles become available once the Elite Four is beaten. Once defeated, the
 
 
 <br><br>
+## Physical/Special Split
+**Physical/Special Split will not be implemented.**
+<br><br>We will not be adding any new Moves because trading compatibility is a requirement of this project. This leaves us with several types that only have viable Physical or viable Special moves and all solutions to this problem deviate from canonical attributes more than I'm comfortable with
+<br><br>Some Types that have this issue are Dark (no Special), Fighting (no Special), Flying (no viable Special), Ground (no Special), Poison (no viable Physical), Psychic (no Physical), Rock (only viable Special has 5 PP), Steel (no Special except Doom Desire)
+* This open-source project may help [tezemi/pokefirered-updated](https://github.com/tezemi/pokefirered-updated)
+  * [ ] Each move is Physical or Special
+  * [ ] Moves are labelled Physical or Special
+  * [ ] Hidden Power is a Special Move
+
+
+
+
+
+<br><br>
 ## Pokémon Box Link / PC Anywhere
+**Pokémon Box Link will not be implemented.**
+<br><br>While I love the portable PC, we would need to take sure it’s still balanced. HM-using Pokémon and long challenging dungeons are both very much in the spirit of Kanto and easy access to all boxed Pokémon may jeopardize this
 * [ ] Named “Pokémon Box Link” and uses Let’s Go’s sprite
 * [ ] Given by Professor Oak’s Aide once Brock is defeated
 * Running Shoes will be available from the start, so it makes sense that Pokémon Box Link is given here. The Aide should have dialogue explaining the control mappings
@@ -233,7 +208,6 @@ These battles become available once the Elite Four is beaten. Once defeated, the
 * [ ] Pokémon do not heal when deposited into the PC
 * [ ] Healing at a Pokémon Center heals all Pokémon
 * [ ] Cannot be used in the Pokémon League
-* While I love the portable PC, we would need to take sure it’s still balanced. HM-using Pokémon and long challenging dungeons are both very much in the spirit of Kanto and easy access to all boxed Pokémon may jeopardize this
 
 
 
