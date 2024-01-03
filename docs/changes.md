@@ -173,7 +173,7 @@
   * [ ] **TM** learnsets are updated
   * ⚠️ Some Pokémon currently learn TMs only through Egg Moves. Make sure to remove these from the Egg Move list when they’re added to the TMs list
   * [ ] **HM** learnsets are updated
-  * [ ] **Move Tutor** learnsets are updated
+  * [x] **Move Tutor** learnsets are updated
 <br><br>
 * [ ] **Egg Groups are updated**
   * [ ] Add Human-Like Egg Group for Ralts
